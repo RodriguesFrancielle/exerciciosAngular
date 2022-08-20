@@ -7,4 +7,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularProject';
+
+  nome: string = ""
+  input: string = ""
+
+  public botaoSalvar(){
+    this.nome = this.input
+
+  }
+  public botaoLimpar(){
+    this.input = ""
+    
+   }
+
+  
 }
+
+
+

@@ -1,0 +1,73 @@
+.clcontainer-fluid{
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.clLogin{
+  margin-top: 50px;
+  margin-right: 50%;
+  
+}
+
+.clInput{
+  margin: 10px;
+  margin-left: 40px;
+  width: 80%;
+  
+}
+
+.clEmail{
+  margin-top: 40px;
+  margin-right: 150px;
+  margin-bottom: 0%;
+  color: gray;
+ 
+}
+.clPassword{
+  margin-top: 20px;
+  margin-bottom: 0px;
+  color: gray;
+}
+.clForgot{
+  margin-left: 60px;
+  
+}
+
+.clCheckbox{
+  margin: 10px;
+}
+
+.clButton{
+  margin-left: 80px;
+  width: 20%;
+  height: 120%;
+  background: rgb(41, 104, 199) ;
+  color: aliceblue;
+  border-radius: 4px;
+  border: 0px;
+}
+
+.clMsn{
+  margin: 20px;
+
+}
+.clRed{
+  color: red;
+}
+.clGreen{
+  color: green;
+}
+
+
+.clP{
+
+  margin: 20px;
+
+}
+
+.clCopy{
+  color: gray;
+}
+
+.spinner-border{
+  margin-left: 50%;
+}

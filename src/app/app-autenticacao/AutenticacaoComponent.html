@@ -1,0 +1,45 @@
+
+<div class="clcontainer-fluid p-0 container-sm d-flex justify-content-center">
+    <div class="card text-center shadow-lg" style="width: 23rem;">
+
+    <h3 class="clLogin">Login</h3>
+
+<div>
+    <p class="clEmail">E-Mail Address</p>
+</div>
+
+<div>
+    <input class="clInput form-control"  type="text" id="idEmail"
+    [(ngModel)] = "usuario.userId">
+</div>
+
+<div>
+    <p class="clPassword">Password<a class="clForgot" href="">Forgot Password?</a></p>
+    
+</div>
+
+<div>
+    <input class="clInput form-control" type="password" id="idPassword" [(ngModel)] = "usuario.password">
+</div>
+
+<div>
+    <input class="clCheckbox" type="checkbox" id="idCheckbox">
+    <label class="clLabelCheckbox" for="idCheckbox">Remember Me</label>
+    <button class="clButton" type="button" (click)="Login()">Login</button>
+</div>
+
+    <div class="spinner-border" *ngIf="spinner, else mensagem"></div>
+
+    <ng-template #mensagem>
+    <p class="clMsn" [ngClass]="class">{{msn}}</p>
+    </ng-template>
+
+    <p class="clP">Don't have an account? <a href="">Create One</a></p>
+
+  </div>
+</div>
+
+    <p class="clCopy">Copyright 2017-2021 - Your Company </p>
+    
+
+
