@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { UsuarioService } from "../services/usuarioService";
 
 import { Usuario } from "../interfaces/usuario";
 @Component({
@@ -6,6 +7,7 @@ import { Usuario } from "../interfaces/usuario";
     templateUrl: './AutenticacaoComponent.html', 
     styleUrls: ['./AutenticacaoComponent.css']
 })
+
 
 export class  AutenticacaoComponent{
 
@@ -15,6 +17,12 @@ export class  AutenticacaoComponent{
         tipo: ''
     }
 
+    constructor(private usuarioService: UsuarioService ){}
+
+    ngonInit(): void{
+
+    }
+
     spinner: boolean = false
     msn?: string = ""
     contTentativa: number = 0
@@ -22,9 +30,11 @@ export class  AutenticacaoComponent{
     class: string = "";
   
 
-public Login(){
+public getUsuario(){
 
     this.spinner = true;
+    this.usuarioService.getUsuario().subscribe((user) => (this.usuario = user[0]))
+    console.log(this.usuarioService); 
 
     setTimeout(() => {
         this.spinner = false;
@@ -66,5 +76,4 @@ public Login(){
             
             }, 500); 
     }
-   
 }
