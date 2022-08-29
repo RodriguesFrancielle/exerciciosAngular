@@ -1,7 +1,8 @@
 import { Component } from "@angular/core";
 import { UsuarioService } from "../services/usuarioService";
-
 import { Usuario } from "../interfaces/usuario";
+import { Router } from "@angular/router";
+
 @Component({
     selector: 'app-autenticacao', 
     templateUrl: './AutenticacaoComponent.html', 
@@ -16,8 +17,13 @@ export class  AutenticacaoComponent{
         password: '',
         tipo: ''
     }
+    usuarioServer: Usuario = {
+        userId: "",
+        password: "",
+        tipo: ""
+    }
 
-    constructor(private usuarioService: UsuarioService ){}
+    constructor(private usuarioService: UsuarioService, private router: Router ){}
 
     ngonInit(): void{
 
@@ -30,10 +36,10 @@ export class  AutenticacaoComponent{
     class: string = "";
   
 
-public getUsuario(){
+public login(){
 
     this.spinner = true;
-    this.usuarioService.getUsuario().subscribe((user) => (this.usuario = user[0]))
+    this.usuarioService.getUsuario().subscribe((user) => (this.usuarioServer = user[0]))
     console.log(this.usuarioService); 
 
     setTimeout(() => {
@@ -45,6 +51,8 @@ public getUsuario(){
         if (this.usuario.userId ==  "XPTO-21" && this.usuario.password == "Trocar@123") {
             this.msn = "Logado!"
             this.class = "clGreen"
+            localStorage['token'] = "true"                  
+            this.router.navigate(['/']);
             
             
         } 

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,19 +9,20 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angularProject';
 
-  nome: string = ""
-  input: string = ""
+  constructor(private router: Router){}
 
-  public botaoSalvar(){
-    this.nome = this.input
-
+  public deslogar(){
+    localStorage['token'] = "false"
+    this.router.navigate(['/login']);
   }
-  public botaoLimpar(){
-    this.input = ""
-    
-   }
 
-  
+  public readLocalStorageToken() {
+    if (localStorage['token'] === "true") {
+      return true
+    } else {
+      return false
+    }
+  }
 }
 
 
